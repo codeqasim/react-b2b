@@ -5,3 +5,6 @@ body {
  .listDot{
    list-style-type: none;
  }
+.borderRadius{
+  border-radius: 10px;
+}
