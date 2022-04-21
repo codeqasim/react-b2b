@@ -1,6 +1,8 @@
 import React from "react";
 import { Outlet, Link } from "react-router-dom";
+import {Box,Container} from '@mui/material/';
 import Appbar from "../components/Appbar.js";
+import Home from '../pages/Home.js';
 
 
 
@@ -8,12 +10,14 @@ const Layout = () => {
   return (
     <>
     
-     <Appbar />
+    <Container maxWidth="sm">
+    <Appbar />
+     <Home />
+    </Container>
 
-     
-
-      <nav>
-        <ul>
+     {/* <Box textAlign='center'>
+     <nav>
+        <ul className="listDot">
           <li>
             <Link to="/">Home</Link>
           </li>
@@ -27,6 +31,9 @@ const Layout = () => {
       </nav>
 
       <Outlet />
+     </Box> */}
+
+      
     </>
   );
 };

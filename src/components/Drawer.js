@@ -10,6 +10,7 @@ import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
 import MenuIcon from '@mui/icons-material/Menu';
+import GridViewIcon from '@mui/icons-material/GridView';
 export default function TemporaryDrawer({mobiledrawer}) {
 
   const [state, setState] = React.useState({
@@ -59,7 +60,7 @@ export default function TemporaryDrawer({mobiledrawer}) {
     <div>
       {['left', ].map((anchor) => (
         <React.Fragment key={anchor}>
-          <IconButton onClick={toggleDrawer(anchor, true)}><MenuIcon sx={{ color:'white' }} /> </IconButton>
+          <IconButton onClick={toggleDrawer(anchor, true)}><GridViewIcon /> </IconButton>
           <Drawer
             anchor={anchor}
             open={state[anchor]}
