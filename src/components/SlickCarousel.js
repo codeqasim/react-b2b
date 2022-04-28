@@ -1,21 +1,25 @@
 import React, { Component } from "react";
 import Slider from "react-slick";
 import {Box,Typography,Button} from '@mui/material/';
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
 
 export default class SimpleSlider extends Component {
   render() {
     const settings = {
+      arrows:false,
       infinite: true,
       speed: 500,
+      slidesToShow: 1.1,
     };
     return (
       <>
         <Slider {...settings}>
-         <Box mt={3} borderRadius='10px'>
+         <Box  mt={3} >
            <Box sx={{ position:'relative' }}>
-           <img className="borderRadius" src="/assets/img/home1.jpeg" height='auto' width='100%px' />
+           <img className="borderRadius" src="/assets/img/home1.jpeg" height='auto' width='95%px' />
            </Box>
-         <Box ml={5} sx={{ position:'absolute',top:'160px' }}>
+         <Box ml={10} sx={{ position:'absolute',top:'160px' }}>
          <Typography fontWeight='bold' lineHeight='25px' fontSize='17px' color='#222222' component="div">
          Farm Fresh Veggies
       </Typography>
@@ -27,11 +31,11 @@ export default class SimpleSlider extends Component {
     }, }}>Shop Now</Button>
          </Box>
          </Box>
-         <Box borderRadius='10px' mt={3}>
+         <Box  mt={3}>
            <Box sx={{ position:'relative' }}>
-           <img className="borderRadius" src="/assets/img/home2.jpeg" height='auto' width='100%px' />
+           <img className="borderRadius" src="/assets/img/home2.jpeg" height='auto' width='95%px' />
            </Box>
-         <Box ml={5} sx={{ position:'absolute',top:'160px' }}>
+         <Box ml={10} sx={{ position:'absolute',top:'160px' }}>
          <Typography fontWeight='bold' lineHeight='25px' fontSize='17px' color='#ffffff' component="div">
          Farm Fresh Veggies
       </Typography>

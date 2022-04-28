@@ -2,9 +2,19 @@ body {
   padding : 0px;
   margin : 0px;
  }
- .listDot{
-   list-style-type: none;
- }
 .borderRadius{
   border-radius: 10px;
+}
+.slick-slide{
+  height: auto!important;
+}
+.off-price{
+  background-color: #0baf9a!important;
+  color: #fff!important;
+  padding: 2px 10px!important;
+  border-radius: 100px!important;
+  font-weight: 400!important;
+  font-size: 14px!important;
+  line-height: 20px!important;
+  margin-left: 10px!important;
 }
