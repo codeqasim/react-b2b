@@ -18,3 +18,10 @@ body {
   line-height: 20px!important;
   margin-left: 10px!important;
 }
+.add-btn{
+  transform: translate(60px, 10px);
+  color: #0baf9a!important;
+}
+.css-1ee5err-MuiButtonBase-root-MuiBottomNavigationAction-root.Mui-selected{
+  color:white!important;
+}

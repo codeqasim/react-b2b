@@ -6,7 +6,8 @@ import Slick from '../components/SlickCarousel'
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
 import RecentlySlick from '../components/RecentlySlick';
-
+import LowPrice from '../components/LowPriceSlick';
+import BottomNavigation from '../components/BottomNavigation.js';
 
 export default function FullWidthTextField() {
   const [count, setCount] = React.useState(1);
@@ -22,7 +23,9 @@ export default function FullWidthTextField() {
   const styles = {
     paperContainer: {
       width: '98%',
-        backgroundImage: `url(${"/assets/img/backimg.png"})`
+        backgroundImage: `url(${"/assets/img/backimg.png"})`,
+        backgroundRepeat: 'no-repeat',
+        height:'auto',
     }
 };
 const images = [
@@ -221,9 +224,34 @@ const cardImages = [
        </Box>
      </Card>
       ))}
+      </Box>
+
+      <Box>
+      <Box display='flex' sx={{ flexGrow: 1 }}>
+      <Typography fontSize='17px' fontWeight='700' color='#222222' variant="body1" >
+      Lowest Price
+      </Typography>
       
+        <Box ml='auto' display='flex'>
+        <Typography fontSize='14px' fontWeight='600' lineHeight='21px' >
+        <Link color='#0baf9a' href="#" underline="none">
+        {'see all'}
+        </Link>
+        </Typography>
+        </Box>
+        </Box>
+        <Typography fontSize='14px' fontWeight='400' color='#777777' lineHeight='21px' gutterBottom >
+        Pay less, Get More
+      </Typography>
+      </Box>
+
+      <Box>
+        <LowPrice />
       </Box>
     
+    <Box>
+    <BottomNavigation />
+    </Box>
     </Box>
     </div>
   );

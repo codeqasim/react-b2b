@@ -13,6 +13,7 @@ const Layout = () => {
     <Container maxWidth="sm">
     <Appbar />
      <Home />
+    
     </Container>
 
      {/* <Box textAlign='center'>
