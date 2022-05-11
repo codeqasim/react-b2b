@@ -3,6 +3,7 @@ import { Outlet, Link } from "react-router-dom";
 import {Box,Container} from '@mui/material/';
 import Appbar from "../components/Appbar.js";
 import Home from '../pages/Home.js';
+import BottomNavigation from '../components/BottomNavigation.js';
 
 
 
@@ -13,7 +14,7 @@ const Layout = () => {
     <Container maxWidth="sm">
     <Appbar />
      <Home />
-    
+     <BottomNavigation />
     </Container>
 
      {/* <Box textAlign='center'>

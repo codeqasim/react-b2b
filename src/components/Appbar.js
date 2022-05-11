@@ -159,7 +159,7 @@ export default function PrimarySearchAppBar() {
   );
 
   return (
-    <Box >
+    <Box sx={{ zIndex:1000,width:'44.5%', backgroundColor:'rgba(255,255,255,0.6)',backdropFilter:'blur(14px)'}} position="fixed" >
       <AppBar sx={{ backgroundColor:'transparent',boxShadow:'none'}} position="static">
         <Toolbar sx={{ px:'0px!important' }}>
          <Box>

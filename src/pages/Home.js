@@ -7,10 +7,12 @@ import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
 import RecentlySlick from '../components/RecentlySlick';
 import LowPrice from '../components/LowPriceSlick';
-import BottomNavigation from '../components/BottomNavigation.js';
+
+
+
 
 export default function FullWidthTextField() {
-  const [count, setCount] = React.useState(1);
+  const [count, setCount] = React.useState(0);
   // const Increasebtn = () => {
   //   setCount(count + 1);
   // };
@@ -87,7 +89,7 @@ const cardImages = [
 ];
   return (
     <div>
-      <Box >
+      <Box pt={8}>
       <TextField sx={{ border:'1px solid #ceefeb',borderRadius:'4px', backgroundColor:'#fafafa',
       "&:active": {
       borderColor: "transparent",
@@ -201,7 +203,7 @@ const cardImages = [
            variant="text"
              aria-label="reduce"
              onClick={() => {
-              setCount(Math.max(count - 1, 1));
+              setCount(Math.max(count - 1, 0));
             }}
            >
              <RemoveIcon fontSize="small" />
@@ -249,9 +251,7 @@ const cardImages = [
         <LowPrice />
       </Box>
     
-    <Box>
-    <BottomNavigation />
-    </Box>
+    
     </Box>
     </div>
   );
