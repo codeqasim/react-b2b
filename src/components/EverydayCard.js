@@ -11,10 +11,10 @@ export default function ImgMediaCard() {
   return (
     <Card sx={{ mx:'5px', cursor:'pointer' }}>
       <CardMedia
+      sx={{ width: '70%',mx:'auto',pt:1 }}
         component="img"
         alt="green iguana"
-        sx={{ width: '70%',mx:'auto',pt:1 }}
-        image="/assets/img/11.png"
+        image="/assets/img/12.png"
       />
       <CardContent>
         <Typography fontSize='14px' color='#222' fontWeight='600' gutterBottom >

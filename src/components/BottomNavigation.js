@@ -16,7 +16,9 @@ export default function SimpleBottomNavigation() {
    <div>
         <Box pt={10}>
       <BottomNavigation
-      sx={{ backgroundColor:'#0baf9a!important',color:'white',p:2,position: 'fixed', bottom: 0, width: '42%' }}
+      sx={{ backgroundColor:'#0baf9a!important',color:'white',p:2,position: 'fixed', bottom: 0, width: '42%','& .css-1ee5err-MuiButtonBase-root-MuiBottomNavigationAction-root.Mui-selected':{
+        color:'white!important'
+      } }}
         showLabels
         value={value}
         onChange={(event, newValue) => {

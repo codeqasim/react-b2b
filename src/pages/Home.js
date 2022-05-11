@@ -7,6 +7,7 @@ import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
 import RecentlySlick from '../components/RecentlySlick';
 import LowPrice from '../components/LowPriceSlick';
+import Everyday from '../components/EverydaySlick';
 
 
 
@@ -249,6 +250,38 @@ const cardImages = [
 
       <Box>
         <LowPrice />
+      </Box>
+
+      <Box>
+      <Box display='flex' sx={{ flexGrow: 1 }}>
+      <Typography fontSize='17px' fontWeight='700' color='#222222' variant="body1" >
+      Everyday Essentials
+      </Typography>
+      
+        <Box ml='auto' display='flex'>
+        <Typography fontSize='14px' fontWeight='600' lineHeight='21px' >
+        <Link color='#0baf9a' href="#" underline="none">
+        {'see all'}
+        </Link>
+        </Typography>
+        </Box>
+        </Box>
+        <Typography fontSize='14px' fontWeight='400' color='#777777' lineHeight='21px' gutterBottom >
+        Best price ever of all the time
+      </Typography>
+      </Box>
+
+      <Box>
+        <Everyday />
+      </Box>
+
+      <Box>
+        <Typography fontSize='20px' fontWeight='600' color='#cacaca' lineHeight='28px' gutterBottom>Didn’t find what you were looking for?</Typography>
+      </Box>
+      <Box pb={5}>
+      <Button sx={{ backgroundColor:'#0baf9a',border:'1px solid #ceefeb', borderRadius:'5px',fontSize:'15px',fontWeight:500,lineHeight:'21px',px:2.5,py:1.3,color:'white',"&:hover": {
+      backgroundColor:'#0baf9a'
+    }, }} variant="text">Browse Category</Button>
       </Box>
     
     
