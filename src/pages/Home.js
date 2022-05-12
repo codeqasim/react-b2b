@@ -13,7 +13,9 @@ import Everyday from '../components/EverydaySlick';
 
 
 export default function FullWidthTextField() {
-  const [count, setCount] = React.useState(0);
+  const [count, setCount] = React.useState(2);
+  const [state, setState] = React.useState(1);
+  const [number, setNumber] = React.useState(1);
   // const Increasebtn = () => {
   //   setCount(count + 1);
   // };
@@ -171,12 +173,122 @@ const cardImages = [
       </Typography>
 
 
-      {cardImages.map((value) => (
+     
        <Card sx={{ display: 'flex',mt:2,borderRadius:'10px' }}>
        <CardMedia
          component="img"
          sx={{ width: 65, height: 65,p:2 }}
-         image={value.url}
+         image='/assets/img/8.png'
+         alt="Live from space album cover"
+         width="80px"
+       />
+       <Divider sx={{ my:3 }} orientation="vertical" flexItem/>
+       <Box sx={{ display: 'flex', flexDirection: 'column' }}>
+         <CardContent sx={{ flex: '1 0 auto' }}>
+           <Typography fontSize='15px' fontWeight='600' color='#222222' lineHeight='23px'>
+           Assorted Capsicum Combo
+           </Typography>
+           <Typography fontSize='14px' fontWeight='400' color='#777777' lineHeight='21px'>
+           500g
+           </Typography>
+           <Typography fontSize='15px' fontWeight='600' color='#222222' lineHeight='23px'>
+           $25.00 <span className='off-price'>50% off</span>
+           </Typography>
+         </CardContent>
+       </Box>
+       <Box sx={{ display: 'flex', flexDirection: 'column',ml:'auto', pt:5, pr:2 }}>
+         <Box sx={{ border:'1px solid rgba(11,175,154,0.09)' }}>
+       <ButtonGroup>
+           <Button
+           sx={{ color:'black',"&:hover": {
+             bgcolor:'transparent!important',
+           }, }}
+           variant="text"
+             aria-label="reduce"
+             onClick={() => {
+              setNumber(Math.max(number - 1, 0));
+            }}
+           >
+             <RemoveIcon fontSize="small" />
+           </Button>
+          <Typography sx={{ pt:0.5,mx:0.5,color:'#0baf9a' }}>{number}</Typography>
+           <Button
+           sx={{ color:'black',"&:hover": {
+             bgcolor:'transparent!important',
+           }, }}
+           variant="text"
+             aria-label="increase"
+             onClick={() => {
+              setNumber(number + 1);
+            }}
+           >
+             <AddIcon fontSize="small" />
+           </Button>
+         </ButtonGroup>
+         </Box>
+       </Box>
+     </Card>
+
+     <Card sx={{ display: 'flex',mt:2,borderRadius:'10px' }}>
+       <CardMedia
+         component="img"
+         sx={{ width: 65, height: 65,p:2 }}
+         image='/assets/img/8.png'
+         alt="Live from space album cover"
+         width="80px"
+       />
+       <Divider sx={{ my:3 }} orientation="vertical" flexItem/>
+       <Box sx={{ display: 'flex', flexDirection: 'column' }}>
+         <CardContent sx={{ flex: '1 0 auto' }}>
+           <Typography fontSize='15px' fontWeight='600' color='#222222' lineHeight='23px'>
+           Assorted Capsicum Combo
+           </Typography>
+           <Typography fontSize='14px' fontWeight='400' color='#777777' lineHeight='21px'>
+           500g
+           </Typography>
+           <Typography fontSize='15px' fontWeight='600' color='#222222' lineHeight='23px'>
+           $25.00 <span className='off-price'>50% off</span>
+           </Typography>
+         </CardContent>
+       </Box>
+       <Box sx={{ display: 'flex', flexDirection: 'column',ml:'auto', pt:5, pr:2 }}>
+         <Box sx={{ border:'1px solid rgba(11,175,154,0.09)' }}>
+       <ButtonGroup>
+           <Button
+           sx={{ color:'black',"&:hover": {
+             bgcolor:'transparent!important',
+           }, }}
+           variant="text"
+             aria-label="reduce"
+             onClick={() => {
+              setState(Math.max(state - 1, 0));
+            }}
+           >
+             <RemoveIcon fontSize="small" />
+           </Button>
+          <Typography sx={{ pt:0.5,mx:0.5,color:'#0baf9a' }}>{state}</Typography>
+           <Button
+           sx={{ color:'black',"&:hover": {
+             bgcolor:'transparent!important',
+           }, }}
+           variant="text"
+             aria-label="increase"
+             onClick={() => {
+              setState(state + 1);
+            }}
+           >
+             <AddIcon fontSize="small" />
+           </Button>
+         </ButtonGroup>
+         </Box>
+       </Box>
+     </Card>
+
+     <Card sx={{ display: 'flex',mt:2,borderRadius:'10px' }}>
+       <CardMedia
+         component="img"
+         sx={{ width: 65, height: 65,p:2 }}
+         image='/assets/img/8.png'
          alt="Live from space album cover"
          width="80px"
        />
@@ -226,7 +338,9 @@ const cardImages = [
          </Box>
        </Box>
      </Card>
-      ))}
+
+     
+  
       </Box>
 
       <Box>
