@@ -159,7 +159,7 @@ export default function PrimarySearchAppBar() {
   );
 
   return (
-    <Box sx={{ zIndex:1000,width:'44.5%', backgroundColor:'rgba(255,255,255,0.6)',backdropFilter:'blur(14px)'}} position="fixed" >
+    <Box sx={{ zIndex:1000,width:'45%', backgroundColor:'rgba(255,255,255,0.6)',backdropFilter:'blur(14px)'}} position="fixed" >
       <AppBar sx={{ backgroundColor:'transparent',boxShadow:'none'}} position="static">
         <Toolbar sx={{ px:'0px!important' }}>
          <Box>
@@ -177,7 +177,7 @@ export default function PrimarySearchAppBar() {
           <Box sx={{ flexGrow: 1 }} />
           <AddLocationAltOutlinedIcon sx={{ color:'#222222' }}/>
           <Typography mt='5px' pl={1} fontSize='15px' fontWeight='700' lineHeight='23px' color='#222222' gutterBottom component="div">
-          Los Angeles
+          Abdul Qadir
       </Typography>
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
             <IconButton
