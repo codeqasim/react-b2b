@@ -10,10 +10,12 @@ import ShoppingBagOutlinedIcon from '@mui/icons-material/ShoppingBagOutlined';
 import Badge from '@mui/material/Badge';
 import Cart from './Cart'
 import Drawer from '@mui/material/Drawer';
+import { useSelector, useDispatch } from "react-redux";
 import { Typography } from '@mui/material';
 import SwipeableDrawer from '@mui/material/SwipeableDrawer';
 
 export default function SimpleBottomNavigation() {
+  const myState = useSelector((state) => state.changeNumber);
   const [value, setValue] = React.useState(0);
   const [open, setOpen] = React.useState(false);
   const toggleDrawer = (newOpen) => () => {
@@ -36,7 +38,7 @@ export default function SimpleBottomNavigation() {
         <BottomNavigationAction label="Category" icon={<GridViewIcon sx={{ fontSize: 30 }} />} />
         <BottomNavigationAction label="Search" icon={<SearchIcon sx={{ fontSize: 30 }} />} />
         <BottomNavigationAction label="Offers" icon={<CardGiftcardOutlinedIcon sx={{ fontSize: 30 }} />} />
-        <BottomNavigationAction onClick={toggleDrawer(true)} label="Cart" icon={<Badge color="error"  badgeContent={4}>
+        <BottomNavigationAction onClick={toggleDrawer(true)} label="Cart" icon={<Badge color="error"  badgeContent={myState}>
         <ShoppingBagOutlinedIcon sx={{ fontSize: 30 }} />
         </Badge>} />
       </BottomNavigation>

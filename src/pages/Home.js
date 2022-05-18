@@ -23,11 +23,15 @@ import RemoveIcon from "@mui/icons-material/Remove";
 import RecentlySlick from "../components/RecentlySlick";
 import LowPrice from "../components/LowPriceSlick";
 import Everyday from "../components/EverydaySlick";
+import { useSelector, useDispatch } from "react-redux";
+import {incNumber, decNumber} from "../actions/index.js";
 
 export default function FullWidthTextField() {
-  const [count, setCount] = React.useState(2);
-  const [state, setState] = React.useState(1);
-  const [number, setNumber] = React.useState(4);
+  const myState = useSelector((state) => state.changeNumber);
+  const dispatch = useDispatch();
+  const [count, setCount] = React.useState(0);
+  const [state, setState] = React.useState(0);
+  const [number, setNumber] = React.useState(0);
   // const Increasebtn = () => {
   //   setCount(count + 1);
   // };
@@ -440,15 +444,15 @@ export default function FullWidthTextField() {
                       },
                     }}
                     variant="text"
-                    aria-label="reduce"
-                    onClick={() => {
-                      setCount(Math.max(count - 1, 0));
+                    aria-label="INCREMENT"
+                    onClick={ () => {
+                      dispatch(decNumber())
                     }}
                   >
                     <RemoveIcon fontSize="small" />
                   </Button>
                   <Typography sx={{ pt: 0.5, mx: 0.5, color: "#0baf9a" }}>
-                    {count}
+                    {myState}
                   </Typography>
                   <Button
                     sx={{
@@ -459,8 +463,8 @@ export default function FullWidthTextField() {
                     }}
                     variant="text"
                     aria-label="increase"
-                    onClick={() => {
-                      setCount(count + 1);
+                    onClick={ () => {
+                      dispatch(incNumber())
                     }}
                   >
                     <AddIcon fontSize="small" />
