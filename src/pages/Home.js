@@ -24,22 +24,15 @@ import RecentlySlick from "../components/RecentlySlick";
 import LowPrice from "../components/LowPriceSlick";
 import Everyday from "../components/EverydaySlick";
 import { useSelector, useDispatch } from "react-redux";
-import {incNumber, decNumber} from "../actions/index.js";
+import { incNumber, decNumber } from "../actions/index.js";
+import { incNumbers, decNumbers } from "../actions/index.js";
+import { plusNumbers, minusNumbers } from "../actions/index.js";
 
 export default function FullWidthTextField() {
   const myState = useSelector((state) => state.changeNumber);
+  const counts = useSelector((state) => state.countNumber);
+  const number = useSelector((state) => state.notification);
   const dispatch = useDispatch();
-  const [count, setCount] = React.useState(0);
-  const [state, setState] = React.useState(0);
-  const [number, setNumber] = React.useState(0);
-  // const Increasebtn = () => {
-  //   setCount(count + 1);
-  // };
-  // const decrement = () => {
-  //   if (count > 1) {
-  //     setCount(count - 1);
-  //   }
-  // };
 
   const styles = {
     paperContainer: {
@@ -83,17 +76,7 @@ export default function FullWidthTextField() {
       name: "Rice, Flour & Grains",
     },
   ];
-  const cardImages = [
-    {
-      url: "/assets/img/8.png",
-    },
-    {
-      url: "/assets/img/8.png",
-    },
-    {
-      url: "/assets/img/8.png",
-    },
-  ];
+
   return (
     <div>
       <Box pt={8}>
@@ -273,7 +256,7 @@ export default function FullWidthTextField() {
                     variant="text"
                     aria-label="reduce"
                     onClick={() => {
-                      setNumber(Math.max(number - 1, 0));
+                      dispatch(minusNumbers());
                     }}
                   >
                     <RemoveIcon fontSize="small" />
@@ -291,7 +274,7 @@ export default function FullWidthTextField() {
                     variant="text"
                     aria-label="increase"
                     onClick={() => {
-                      setNumber(number + 1);
+                      dispatch(plusNumbers());
                     }}
                   >
                     <AddIcon fontSize="small" />
@@ -359,14 +342,13 @@ export default function FullWidthTextField() {
                     variant="text"
                     aria-label="reduce"
                     onClick={() => {
-                      setState(Math.max(state - 1, 0));
+                      dispatch(decNumbers());
                     }}
-                    u
                   >
                     <RemoveIcon fontSize="small" />
                   </Button>
                   <Typography sx={{ pt: 0.5, mx: 0.5, color: "#0baf9a" }}>
-                    {state}
+                    {counts}
                   </Typography>
                   <Button
                     sx={{
@@ -378,7 +360,7 @@ export default function FullWidthTextField() {
                     variant="text"
                     aria-label="increase"
                     onClick={() => {
-                      setState(state + 1);
+                      dispatch(incNumbers());
                     }}
                   >
                     <AddIcon fontSize="small" />
@@ -445,8 +427,8 @@ export default function FullWidthTextField() {
                     }}
                     variant="text"
                     aria-label="INCREMENT"
-                    onClick={ () => {
-                      dispatch(decNumber())
+                    onClick={() => {
+                      dispatch(decNumber());
                     }}
                   >
                     <RemoveIcon fontSize="small" />
@@ -463,8 +445,8 @@ export default function FullWidthTextField() {
                     }}
                     variant="text"
                     aria-label="increase"
-                    onClick={ () => {
-                      dispatch(incNumber())
+                    onClick={() => {
+                      dispatch(incNumber());
                     }}
                   >
                     <AddIcon fontSize="small" />
